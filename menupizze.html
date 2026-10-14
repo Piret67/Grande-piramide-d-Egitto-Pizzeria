@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria Bella Napoli - Ordina Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #d9534f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+            gap: 15px;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+        .pizza-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+        .pizza-info {
+            flex-grow: 1;
+        }
+        .pizza-info h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+        }
+        .pizza-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .price {
+            font-weight: bold;
+            color: #d9534f;
+            white-space: nowrap;
+        }
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        input, select, textarea, button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🍕 Pizzeria Bella Napoli</h1>
+        <p>Scegli la tua pizza e ordina subito!</p>
+    </header>
+
+    <div class="container">
+        <h2>Il nostro Menu</h2>
+        
+        <!-- Margherita -->
+        <div class="menu-item">
+            <img class="pizza-img" src="https://www.mysocialrecipe.com/files/admin/immagini/pistacchiosa1-master.jpg" alt="Pistacchisa">
+            <div class="pizza-info">
+                <h3>Pistacchiosa</h3>
+                <p>Pomodoro, fior di latte, basilico, olio extravergine</p>
+            </div>
+            <div>
+                <span class="price">€ 6.00</span>
+            </div>
+        </div>
+
+        <!-- Diavola -->
+        <div class="menu-item">
+            <img class="pizza-img" src="https://istockphoto.com" alt="Pizza Diavola">
+            <div class="pizza-info">
+                <h3>Diavola</h3>
+                <p>Pomodoro, fior di latte, salame piccante</p>
+            </div>
+            <div>
+                <span class="price">€ 7.50</span>
+            </div>
+        </div>
+
+        <!-- Capricciosa -->
+        <div class="menu-item">
+            <img class="pizza-img" src="https://shutterstock.com" alt="Pizza Capricciosa">
+            <div class="pizza-info">
+                <h3>Capricciosa</h3>
+                <p>Pomodoro, fior di latte, prosciutto, funghi, carciofi, olive</p>
+            </div>
+            <div>
+                <span class="price">€ 8.50</span>
+            </div>
+        </div>
+
+        <!-- Quattro Formaggi -->
+        <div class="menu-item">
+            <img class="pizza-img" src="https://shutterstock.com" alt="Pizza Quattro Formaggi">
+            <div class="pizza-info">
+                <h3>Quattro Formaggi</h3>
+                <p>Fior di latte, gorgonzola, fontina, parmigiano</p>
+            </div>
+            <div>
+                <span class="price">€ 8.00</span>
+            </div>
+        </div>
+
+        <h2>Modulo d'Ordine</h2>
+        <form action="#" method="post">
+            <label for="nome">Nome e Cognome:</label>
+            <input type="text" id="nome" name="nome" required placeholder="Il tuo nome">
+
+            <label for="telefono">Telefono:</label>
+            <input type="tel" id="telefono" name="telefono" required placeholder="Il tuo numero">
+
+            <label for="pizza">Seleziona la Pizza:</label>
+            <select id="pizza" name="pizza" required>
+                <option value="">-- Scegli una pizza --</option>
+                <option value="margherita">Margherita - € 6.00</option>
+                <option value="diavola">Diavola - € 7.50</option>
+                <option value="capricciosa">Capricciosa - € 8.50</option>
+                <option value="quattro_formaggi">Quattro Formaggi - € 8.00</option>
+            </select>
+
+            <label for="indirizzo">Indirizzo di Consegna (o scrivi "Asporto"):</label>
+            <input type="text" id="indirizzo" name="indirizzo" required placeholder="Via, numero civico, campanello">
+
+            <label for="note">Note aggiuntive:</label>
+            <textarea id="note" name="note" rows="3" placeholder="Es. Senza cipolla, ben cotta..."></textarea>
+
+            <button type="submit">Invia Ordine</button>
+        </form>
+    </div>
+
+</body>
+</html>
