@@ -3,39 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizzeria Bella Napoli - Ordina Online</title>
+    <title>Pizzeria Grande Piramide d'Egitto - Il Nostro Menu</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            /* Sfondo personalizzato con immagine di copertina */
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
             color: #333;
         }
         header {
-            background-color: #d9534f;
-            color: white;
+            background: linear-gradient(135deg, #1e1e24 0%, #2d2b30 100%);
+            color: #f3e5ab; /* Colore oro antico */
             text-align: center;
-            padding: 20px;
+            padding: 25px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border-bottom: 4px solid #d4af37; /* Bordo dorato */
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+        header p {
+            margin: 8px 0 0 0;
+            font-size: 1.05rem;
+            color: #e0d0a0;
+            font-style: italic;
+        }
+        /* Decorazione stile geroglifico/faraonico */
+        .egypt-decor {
+            font-size: 1.2rem;
+            letter-spacing: 6px;
+            margin-top: 6px;
+            opacity: 0.85;
         }
         .container {
             max-width: 800px;
-            margin: 20px auto;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 30px auto;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         .menu-item {
             display: flex;
             align-items: center;
-            padding: 15px 0;
+            padding: 15px;
             border-bottom: 1px solid #ddd;
             gap: 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
         }
         .menu-item:last-child {
             border-bottom: none;
         }
+
+        /* Effetto hover sul contenitore della pizza */
+        .menu-item:hover {
+            background-color: rgba(217, 83, 79, 0.05);
+        }
+
+        /* Immagine della pizza con effetto ingrandimento */
         .pizza-img {
             width: 80px;
             height: 80px;
@@ -43,53 +78,55 @@
             border-radius: 8px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
             flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
+        /* Animazione al passaggio del mouse sull'immagine o sul riquadro */
+        .menu-item:hover .pizza-img,
+        .pizza-img:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
         .pizza-info {
             flex-grow: 1;
         }
+
+        /* Titolo della pizza con effetto ingrandimento e cambio colore */
         .pizza-info h3 {
             margin: 0 0 5px 0;
             font-size: 1.1rem;
+            display: inline-block;
+            transition: transform 0.3s ease, color 0.3s ease;
+            transform-origin: left center;
         }
+
+        /* Animazione al passaggio del mouse sul titolo o sul riquadro */
+        .menu-item:hover .pizza-info h3 {
+            transform: scale(1.08) translateX(4px);
+            color: #d9534f;
+        }
+
         .pizza-info p {
             margin: 0;
             font-size: 0.9rem;
             color: #666;
         }
+
         .price {
             font-weight: bold;
             color: #d9534f;
             white-space: nowrap;
-        }
-        form {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        input, select, textarea, button {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-        button {
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        button:hover {
-            background-color: #4cae4c;
+            font-size: 1.1rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>🍕 Pizzeria Bella Napoli</h1>
-        <p>Scegli la tua pizza e ordina subito!</p>
+        <h1>🔺 Pizzeria Grande Piramide d'Egitto 🐪</h1>
+        <p>I sapori dei Faraoni direttamente sulla tua tavola!</p>
+        <div class="egypt-decor">𓀀 𓃒 𓁝 𓃗 𓉴</div>
     </header>
 
     <div class="container">
@@ -97,77 +134,124 @@
         
         <!-- Margherita -->
         <div class="menu-item">
-            <img class="pizza-img" src="https://www.mysocialrecipe.com/files/admin/immagini/pistacchiosa1-master.jpg" alt="Pistacchisa">
+            <img class="pizza-img" src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=200&auto=format&fit=crop" alt="Margherita Classic">
             <div class="pizza-info">
-                <h3>Pistacchiosa</h3>
-                <p>Pomodoro, fior di latte, basilico, olio extravergine</p>
+                <h3>Margherita Classic</h3>
+                <p>Pomodoro San Marzano, mozzarella di bufala, basilico fresco, olio EVO</p>
             </div>
             <div>
-                <span class="price">€ 6.00</span>
+                <span class="price">€ 10.00</span>
+            </div>
+        </div>
+
+        <!-- Marinara Special -->
+        <div class="menu-item">
+            <img class="pizza-img" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=200&auto=format&fit=crop" alt="Marinara Special">
+            <div class="pizza-info">
+                <h3>Marinara Special</h3>
+                <p>Pomodoro, aglio, origano, acciughe di Cetara, capocollo</p>
+            </div>
+            <div>
+                <span class="price">€ 11.00</span>
+            </div>
+        </div>
+
+        <!-- Pistacchiosa -->
+        <div class="menu-item">
+            <img class="pizza-img" src="https://www.mysocialrecipe.com/files/admin/immagini/pistacchiosa1-master.jpg" alt="Pistacchiosa">
+            <div class="pizza-info">
+                <h3>Pistacchiosa</h3>
+                <p>Pesto di pistacchio, fior di latte, granella di pistacchio, mortadella</p>
+            </div>
+            <div>
+                <span class="price">€ 15.00</span>
             </div>
         </div>
 
         <!-- Diavola -->
         <div class="menu-item">
-            <img class="pizza-img" src="https://istockphoto.com" alt="Pizza Diavola">
+            <img class="pizza-img" src="https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=200&auto=format&fit=crop" alt="Pizza Diavola">
             <div class="pizza-info">
                 <h3>Diavola</h3>
-                <p>Pomodoro, fior di latte, salame piccante</p>
+                <p>Pomodoro, fior di latte, salame piccante, olio al peperoncino</p>
             </div>
             <div>
-                <span class="price">€ 7.50</span>
+                <span class="price">€ 12.50</span>
             </div>
         </div>
 
         <!-- Capricciosa -->
         <div class="menu-item">
-            <img class="pizza-img" src="https://shutterstock.com" alt="Pizza Capricciosa">
+            <img class="pizza-img" src="https://primochef.it/wp-content/uploads/2018/05/SH_pizza_capricciosa.jpg" alt="Capricciosa">
             <div class="pizza-info">
                 <h3>Capricciosa</h3>
-                <p>Pomodoro, fior di latte, prosciutto, funghi, carciofi, olive</p>
+                <p>Pomodoro, fior di latte, prosciutto cotto, funghi, carciofi, olive nere</p>
             </div>
             <div>
-                <span class="price">€ 8.50</span>
+                <span class="price">€ 14.50</span>
             </div>
         </div>
 
         <!-- Quattro Formaggi -->
         <div class="menu-item">
-            <img class="pizza-img" src="https://shutterstock.com" alt="Pizza Quattro Formaggi">
+            <img class="pizza-img" src="https://i0.wp.com/www.piccolericette.net/piccolericette/wp-content/uploads/2017/06/3234_Pizza.jpg?resize=895%2C616&ssl=1" alt="Quattro Formaggi">
             <div class="pizza-info">
                 <h3>Quattro Formaggi</h3>
-                <p>Fior di latte, gorgonzola, fontina, parmigiano</p>
+                <p>Fior di latte, gorgonzola, fontina, scaglie di parmigiano reggiano</p>
             </div>
             <div>
-                <span class="price">€ 8.00</span>
+                <span class="price">€ 15.00</span>
             </div>
         </div>
 
-        <h2>Modulo d'Ordine</h2>
-        <form action="#" method="post">
-            <label for="nome">Nome e Cognome:</label>
-            <input type="text" id="nome" name="nome" required placeholder="Il tuo nome">
+        <!-- Vegetariana -->
+        <div class="menu-item">
+            <img class="pizza-img" src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?q=80&w=200&auto=format&fit=crop" alt="Vegetariana">
+            <div class="pizza-info">
+                <h3>Vegetariana</h3>
+                <p>Pomodoro, fior di latte, melanzane, zucchine, peperoni grigliati, pomodorini</p>
+            </div>
+            <div>
+                <span class="price">€ 13.00</span>
+            </div>
+        </div>
 
-            <label for="telefono">Telefono:</label>
-            <input type="tel" id="telefono" name="telefono" required placeholder="Il tuo numero">
+        <!-- Hawawshi Pizza -->
+        <div class="menu-item">
+            <img class="pizza-img" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=200&auto=format&fit=crop" alt="Hawawshi Pizza">
+            <div class="pizza-info">
+                <h3>Hawawshi Pharaoh 🥩</h3>
+                <p>Carne trita speziata alla egiziana (spezie orientali, cipolla, peperoncino), formaggio Roumi</p>
+            </div>
+            <div>
+                <span class="price">€ 15.50</span>
+            </div>
+        </div>
 
-            <label for="pizza">Seleziona la Pizza:</label>
-            <select id="pizza" name="pizza" required>
-                <option value="">-- Scegli una pizza --</option>
-                <option value="margherita">Margherita - € 6.00</option>
-                <option value="diavola">Diavola - € 7.50</option>
-                <option value="capricciosa">Capricciosa - € 8.50</option>
-                <option value="quattro_formaggi">Quattro Formaggi - € 8.00</option>
-            </select>
+        <!-- Koshari Pizza -->
+        <div class="menu-item">
+            <img class="pizza-img" src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?q=80&w=200&auto=format&fit=crop" alt="Koshari Pizza">
+            <div class="pizza-info">
+                <h3>Koshari Style 🌾</h3>
+                <p>Base di salsa di pomodoro speziata, lenticchie croccanti, ceci, pasta fritta e salsa piccante Dakkah</p>
+            </div>
+            <div>
+                <span class="price">€ 14.00</span>
+            </div>
+        </div>
 
-            <label for="indirizzo">Indirizzo di Consegna (o scrivi "Asporto"):</label>
-            <input type="text" id="indirizzo" name="indirizzo" required placeholder="Via, numero civico, campanello">
+        <!-- Piramide Special (Egitto Edition) -->
+        <div class="menu-item">
+            <img class="pizza-img" src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?q=80&w=200&auto=format&fit=crop" alt="Piramide Special">
+            <div class="pizza-info">
+                <h3>La Piramide Special 🐪</h3>
+                <p>Formaggio Roumi stagionato, falafel sbriciolati, crema di tahina, menta fresca e spezie orientali</p>
+            </div>
+            <div>
+                <span class="price">€ 16.00</span>
+            </div>
+        </div>
 
-            <label for="note">Note aggiuntive:</label>
-            <textarea id="note" name="note" rows="3" placeholder="Es. Senza cipolla, ben cotta..."></textarea>
-
-            <button type="submit">Invia Ordine</button>
-        </form>
     </div>
 
 </body>
