@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria Grande Piramide d'Egitto - Menù Bibite</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1920&auto=format&fit=crop')
+                no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e1e24 0%, #2d2b30 100%);
+            color: #f3e5ab;
+            text-align: center;
+            padding: 25px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border-bottom: 4px solid #d4af37;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        header p {
+            margin: 8px 0 0;
+            font-size: 1.05rem;
+            color: #e0d0a0;
+            font-style: italic;
+        }
+
+        .egypt-decor {
+            font-size: 1.2rem;
+            letter-spacing: 6px;
+            margin-top: 6px;
+            opacity: 0.85;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .category {
+            margin-top: 25px;
+            padding-bottom: 8px;
+            color: #9b7625;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            gap: 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item:hover {
+            background-color: rgba(217, 83, 79, 0.05);
+        }
+
+        .drink-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            flex-shrink: 0;
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .menu-item:hover .drink-img {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .drink-info {
+            flex-grow: 1;
+            min-width: 0;
+        }
+
+        .drink-info h3 {
+            margin: 0 0 5px;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: transform 0.3s ease, color 0.3s ease;
+            transform-origin: left center;
+        }
+
+        .menu-item:hover .drink-info h3 {
+            transform: scale(1.05) translateX(4px);
+            color: #d9534f;
+        }
+
+        .drink-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #d9534f;
+            white-space: nowrap;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #f3e5ab;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 520px) {
+            .container {
+                margin: 15px 10px;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .menu-item {
+                gap: 10px;
+                padding: 12px 5px;
+            }
+
+            .drink-img {
+                width: 65px;
+                height: 65px;
+            }
+
+            .drink-info h3 {
+                font-size: 0.95rem;
+            }
+
+            .drink-info p {
+                font-size: 0.8rem;
+            }
+
+            .price {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🔺 Pizzeria Grande Piramide d'Egitto 🐪</h1>
+    <p>Bevande divine, degne dei Faraoni!</p>
+    <div class="egypt-decor">𓀀 𓃒 𓁝 𓃗 𓉴</div>
+</header>
+
+<div class="container">
+
+    <h2>🍹 Il nostro Menù delle Bibite</h2>
+    <p>Dissetati con i sapori delle piramidi!</p>
+
+    <h3 class="category">🥤 Bibite Gassate</h3>
+
+    <div class="menu-item">
+        <img class="drink-img"
+             src="https://images.unsplash.com/photo-1554866585-cd94860890b7?q=80&w=300&auto=format&fit=crop"
+             alt="Coca-Cola">
+        <div class="drink-info">
+            <h3>Coca-Cola</h3>
+            <p>La classica bevanda frizzante. Lattina da 330 ml.</p>
+        </div>
+        <span class="price">€ 2,50</span>
+    </div>
+
+    <div class="menu-item">
+        <img class="drink-img"
+             src="https://images.unsplash.com/photo-1624517452488-04869289c4ca?q=80&w=300&auto=format&fit=crop"
+             alt="Fanta">
+        <div class="drink-info">
+            <h3>Fanta Orange</h3>
+            <p>Gusto intenso di arancia, fresca e frizzante. 330 ml.</p>
+        </div>
+        <span class="price">€ 2,50</span>
+    </div>
+
+    <div class="menu-item">
+        <img class="drink-img"
+             src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?q=80&w=300&auto=format&fit=crop"
+             alt="Sprite">
+        <div class="drink-info">
+            <h3>Sprite</h3>
+            <p>Freschezza al limone e lime. Lattina da 330 ml.</p>
+        </div>
+        <span class="price">€ 2,50</span>
+    </div>
+
+    <h3 class="category">💧 Acqua e Tè Freddi</h3>
+
+    <div class="menu-item">
+        <img class="drink-img"
+             src="https://images.unsplash.com/photo-1523362628745-0c100150b504?q=80&w=300&auto=format&fit=crop"
+             alt="Acqua naturale">
+        <div class="drink-info">
+            <h3>Acqua Naturale</h3>
+            <p>Acqua minerale naturale. Bottiglia da 500 ml.</p>
+        </div>
+        <span class="price">€ 1,50</span>
+    </div>
+
+    <div class="menu-item">
+        <img class="drink-img"
+             src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=300&auto=format&fit=crop"
+             alt="Tè freddo al limone">
+        <div class="drink-info">
+            <h3>Tè del Faraone 🍋</h3>
+            <p>Tè freddo al limone, ideale per rinfrescarsi nel deserto. 330 ml.</p>
+        </div>
+        <span class="price">€ 3,00</span>
+    </div>
+
+    <div class="menu-item">
+        <img class="drink-img"
+             src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=300&auto=format&fit=crop"
+             alt="Tè freddo alla pesca">
+        <div class="drink-info">
+            <h3>Tè alla Pesca</h3>
+            <p>Dolce e profumato, con un delicato gusto di pesca. 330 ml.</p>
+        </div>
+        <span class="price">€ 3,00</span>
+    </div>
+
+    <h3 class="category">🌴 Specialità Egiziane</h3>
+
+    <div class="menu-item">
+        <img class="drink-img"
+             src="https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=300&auto=format&fit=crop"
+             alt="Succo di mango">
+        <div class="drink-info">
+            <h3>Nettare del Nilo 🥭</h3>
+            <p>Succo di mango dal sapore tropicale, dolce e vellutato. 250 ml.</p>
+        </div>
+        <span class="price">€ 4,00</span>
+    </div>
+
+    <div class="menu-item">
+        <img class="drink-img"
+             src="https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?q=80&w=300&auto=format&fit=crop"
+             alt="Limonata alla menta">
+        <div class="drink-info">
+            <h3>Limonata del Deserto 🌿</h3>
+            <p>Limone fresco, menta profumata e ghiaccio.</p>
+        </div>
+        <span class="price">€ 4,50</span>
+    </div>
+
+    <div class="menu-item">
+        <img class="drink-img"
+             src="https://storiediteecaffe.com/img/cms/blog/karkade-proprieta-benefici-utilizzi/karkade-fiori-ibisco-hibiscus-sabdariffa.webp"
+             alt="Karkadè">
+        <div class="drink-info">
+            <h3>Karkadè del Faraone 🌺</h3>
+            <p>Infuso di ibisco ispirato alla tradizione egiziana, servito freddo.</p>
+        </div>
+        <span class="price">€ 4,00</span>
+    </div>
+
+    <h3 class="category">🍺 Birre</h3>
+
+    <div class="menu-item">
+        <img class="drink-img"
+             src="https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=300&auto=format&fit=crop"
+             alt="Birra chiara">
+        <div class="drink-info">
+            <h3>Birra Chiara</h3>
+            <p>Birra fresca e leggera. Bottiglia da 330 ml.</p>
+        </div>
+        <span class="price">€ 4,00</span>
+    </div>
+
+</div>
+
+<footer>
+    𓂀 Pizzeria Grande Piramide d'Egitto 𓂀
+    <p>Un brindisi degno dei Faraoni!</p>
+</footer>
+
+</body>
+</html>
